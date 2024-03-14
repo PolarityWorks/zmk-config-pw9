@@ -117,7 +117,6 @@ zephyr_udc0: &usbd {
 	pinctrl-names = "default";
   led_strip: ws2812@0 {
     compatible = "worldsemi,ws2812-spi";
-    label = "WS2812";
 
     /* SPI */
     reg = <0>;
