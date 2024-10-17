@@ -1,17 +1,26 @@
-#include <behaviors.dtsi>
 #include <behaviors/keysmash.dtsi>
 #include <behaviors/awawa.dtsi>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        keypad_00: keypad_00 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp KP_N0 &kp KP_N0>;
+            label = "KEYPAD_00";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&awawa &keysmash  &kp E
-&kp A  &kp S  &kp D
-&kp Z  &kp X  &kp C
+&awawa  &keysmash  &kp E
+&kp A   &kp S      &kp D
+&kp Z   &kp X      &kp C
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
